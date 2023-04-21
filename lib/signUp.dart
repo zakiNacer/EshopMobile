@@ -32,10 +32,10 @@ class _SignUpState extends State<SignUp> {
     width: 25,
     fit: BoxFit.scaleDown,
   );
-Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      leading: backArrow,
+      leading:backArrow,
       backgroundColor: Colors.white,
     ),
 
