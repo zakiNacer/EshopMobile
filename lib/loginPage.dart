@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:ecommerce/Motdepass.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginPage extends StatefulWidget {
@@ -36,8 +37,13 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: backArrow,
-        backgroundColor: Colors.white,
+       leading:GestureDetector(
+                  onTapUp: (details) {
+                    Navigator.pop(context);
+                  },
+                  child: backArrow),
+                
+      backgroundColor: Colors.white,
       ),
 
       
@@ -90,10 +96,20 @@ class _LoginPageState extends State<LoginPage> {
                   child: Container(
                     child: Row(
                       children: [
-                        Text(
+                        new GestureDetector(
+                        onTap: () {
+                         Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                Psw()));
+                        },
+                        
+                        child:Text(
                           'Forgot your password?',
                           style: TextStyle(fontSize: 15.0, color: Colors.black),
                         ),
+                      ),
                         SizedBox(
                           width: 5,
                         ),

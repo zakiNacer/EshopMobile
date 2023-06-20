@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+// import 'package:ecommerce/Motdepass.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -18,9 +19,14 @@ final Widget backArrow = SvgPicture.asset(
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      leading: backArrow,
+       leading:GestureDetector(
+                  onTapUp: (details) {
+                    Navigator.pop(context);
+                  },
+                  child: backArrow),
+                
       backgroundColor: Colors.white,
-    ),
+      ),
 
 
     body: SafeArea(

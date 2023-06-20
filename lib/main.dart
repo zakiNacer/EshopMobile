@@ -1,7 +1,8 @@
 
 
-import 'package:ecommerce/loginPage.dart';
+import 'package:ecommerce/home.dart';
 import 'package:ecommerce/signUp.dart';
+import 'package:ecommerce/LoginPage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -33,9 +34,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      // home:LoginPage(),
       // home:SignUp(),
-      home:Psw(),
+       home:Home(),
+      //  home:SignUp()
       
     );
   }

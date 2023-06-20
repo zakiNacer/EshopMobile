@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ecommerce/LoginPage.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,6 +15,7 @@ class _SignUpState extends State<SignUp> {
     semanticsLabel: 'Retour en arrière',
     width: 15,
     fit: BoxFit.scaleDown,
+    
   );
 
   final Widget arrowRightRed = SvgPicture.asset(
@@ -35,7 +37,12 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      leading:backArrow,
+      leading:GestureDetector(
+                  onTapUp: (details) {
+                    Navigator.pop(context);
+                  },
+                  child: backArrow),
+                
       backgroundColor: Colors.white,
     ),
 
@@ -101,10 +108,21 @@ class _SignUpState extends State<SignUp> {
                   child: Container(
                     child: Row(
                       children: [
-                        Text(
+                        new GestureDetector(
+                        onTap: () {
+                         Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                LoginPage()));
+                        },
+                        
+                        child:Text(
                           'Already have an account?',
                           style: TextStyle(fontSize: 15.0, color: Colors.black),
                         ),
+                       ),
+                        
                         SizedBox(
                           width: 5,
                         ),
